@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuffler</title>
+</head>
+
+    <style>
+        .foco{
+            backdrop-filter: brightness(0.8);
+            border: 3px solid gray;
+        }
+    </style>
+<body>
+    <h1>misture oq escolher e tente adivinhar</h1>
+    <button>Dados</button>
+    <div id="difficult">
+        <!-- <button>Fácil</button>
+        <button>Médio</button>
+        <button>Difícil</button> -->
+        <br>
+        <button onclick="beginGame(1)">1</button>
+        <button onclick="beginGame(2)">2</button>
+        <button onclick="beginGame(3)">3</button>
+        <button onclick="beginGame(4)">4</button>
+        <br><br><br>
+    </div>
+    <div id="area">
+        <span>Modos de combinar: <span id="modosDeCombinar"></span></span><br>
+        
+    </div>
+    <br>
+
+    <div id="stats">
+        
+    </div>
+
+    
+    <script src="script/script.js"></script>
+</body>
+</html>
