@@ -42,7 +42,7 @@ function beginGame(num){
         img.classList.add(`escolha`)
         img.setAttribute(`id`, `escolha${index+1}`)
         img.setAttribute("onclick", `addFocus(${index+1})`)
-        document.body.appendChild(img)
+        document.getElementById("escolhasImg").appendChild(img)
     }
 
     var input = document.createElement("input")
@@ -70,7 +70,6 @@ function addFocus(id){
         if(id == i){
             img[i-1].classList.add("foco")
             itemEmFoco = id
-            console.log(itemEmFoco)
         }
     }
 
@@ -89,6 +88,8 @@ function sendGuess(nthElement){
         img.src = `img/dado-face${input.value}.png`
         img.setAttribute("onclick", ``)
         img.classList.remove("foco")
+
+        focoProximo()
     } else{
         if(randomNums[nthElement-1] > input.value){
             alert("tente um número maior")
@@ -96,6 +97,15 @@ function sendGuess(nthElement){
             alert("tente um número menor")
         }
     }
-
     input.value = ""
+}
+
+function focoProximo(){
+    let img = document.getElementsByClassName('escolha')
+    for(let i = 0; i< img.length;i++){
+        if(img[i].getAttribute("src") == "img/cartaInterrogacao.png"){
+            addFocus(i+1)
+            return
+        }
+    }
 }
